@@ -21,7 +21,11 @@ def checkout(skus):
 
     itemD = Item("D",15,[])
 
-    items = {"A":itemA,"B":itemB,"C":itemC,"D":itemD}
+    itemEOffer = Offer("E",2,45)
+    itemEOffers = [itemEOffer]
+    itemE = Item("E",15,itemEOffers)
+
+    items = {"A":itemA,"B":itemB,"C":itemC,"D":itemD,"E":itemE}
 
     checkoutValue = 0
     discountItems={"A":0,"B":0,"C":0,"D":0}
@@ -53,6 +57,7 @@ def checkout(skus):
             else:
                 checkoutValue += nItems*currentItem.price
     return checkoutValue
+
 
 
 

@@ -45,7 +45,7 @@ def checkout(skus):
     for discountItem in discountItems:
         currentItem = items[discountItem]
         nItems = discountItems[discountItem]
-        summed=False
+        # Calculate special offers from the same product
         for offer in currentItem.offer:
             if nItems >= offer.offerAmount and currentItem.ID == offer.ItemID:
                 nDiscount = nItems/offer.offerAmount
@@ -53,22 +53,19 @@ def checkout(skus):
                 while(int(nDiscount)>0):
                     checkoutValue += offer.OfferPrice
                     nDiscount-=1
-                    print(checkoutValue,nDiscount)
                 currentItems= nItems-nRemovedItems
-                print(currentItems,checkoutValue)
-                checkoutValue +=currentItems*currentItem.price
                 nItems=currentItems
-                summed=True
-
+            # Calculate special offers to interact with different product
             elif nItems >= offer.offerAmount and currentItem.ID != offer.ItemID and offer.ItemID in skus :
                 checkoutValue += nItems*currentItem.price
                 freeItemID = offer.ItemID
                 freeItemValue = items[freeItemID].price
                 checkoutValue -= freeItemValue
-                summed=True
-        if not summed:
+
+        if nItems>0:
             checkoutValue += nItems*currentItem.price
     return checkoutValue
+
 
 
 

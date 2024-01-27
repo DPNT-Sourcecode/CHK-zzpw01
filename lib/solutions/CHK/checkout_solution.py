@@ -1,4 +1,3 @@
-from table import Table
 from item import Item
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -13,3 +12,4 @@ def checkout(skus):
     # calculate checkout
     return skus
     
+

@@ -28,9 +28,12 @@ def checkout(skus):
         else:
             return -1
     # calculate checkout from items with discount
-        
+    for discountItem in discountItems:
+        currentItem = items[discountItem]
+        n_items = discountItems[discountItem]
     return skus
     
+
 
 
 

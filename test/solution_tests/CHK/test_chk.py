@@ -46,4 +46,9 @@ class TestSum():
     
     def test_chk(self):
         assert checkout_solution.checkout("AAAEEB") == 210
+    
+    def test_chk(self):
+        assert checkout_solution.checkout("AAAAAAAA") == 330
+
+        
         

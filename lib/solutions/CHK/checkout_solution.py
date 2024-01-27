@@ -3,8 +3,8 @@
 # skus = unicode string
 
 
-from lib.solutions.CHK.table.item import Item
-
+from .table.item import Item
+from .table.table import Table
 
 def checkout(skus):
     # Init price table and offers
@@ -17,5 +17,6 @@ def checkout(skus):
     # calculate checkout
     return skus
     
+
 
 

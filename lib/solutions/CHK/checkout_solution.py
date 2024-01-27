@@ -44,9 +44,3 @@ def checkout(skus):
             checkoutValue += nItems*currentItem.price
     return checkoutValue
 
-
-
-
-
-
-

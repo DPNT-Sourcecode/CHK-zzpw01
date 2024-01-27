@@ -22,7 +22,3 @@ class TestSum():
     
     def test_chk(self):
         assert checkout_solution.checkout("ABCD") == 115
-
-
-
-

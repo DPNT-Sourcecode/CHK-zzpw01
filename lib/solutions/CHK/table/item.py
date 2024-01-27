@@ -6,4 +6,3 @@ class Item:
     
     def calculateDiscount(self,quantity):
         return 0
-

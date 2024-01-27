@@ -29,13 +29,14 @@ def checkout(skus):
         if sku in items:
             # calculate value
             currentItem = items[sku]
-            if currentItem.offerAmount>0:
-                discountItems[sku]+=1
-            else:
-                checkoutValue += currentItem.price
+            for offer in currentItem.offer:
+                if offer.offerAmount>0:
+                    discountItems[sku]+=1
+                else:
+                    checkoutValue += currentItem.price
         else:
             return -1
-    print(discountItems)
+    print(discountItems,checkoutValue)
     # calculate checkout from items with discount
     for discountItem in discountItems:
         currentItem = items[discountItem]
@@ -52,6 +53,4 @@ def checkout(skus):
         else:
             checkoutValue += nItems*currentItem.price
     return checkoutValue
-
-
 

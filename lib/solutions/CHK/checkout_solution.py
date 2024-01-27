@@ -44,13 +44,14 @@ def checkout(skus):
         for offer in currentItem.offer:
             if nItems >= offer.offerAmount and currentItem.ID == offer.ItemID:
                 nDiscount = nItems/offer.offerAmount
+                print(int(nDiscount))
                 nRemovedItems = int(nDiscount)*offer.offerAmount
                 while(int(nDiscount)>0):
                     checkoutValue += offer.OfferPrice
                     nDiscount-=1
                 currentItems= nItems-nRemovedItems
                 checkoutValue +=currentItems*currentItem.price
-                print(checkoutValue)
+                nItems=currentItems
             else:
                 checkoutValue += nItems*currentItem.price
     return checkoutValue

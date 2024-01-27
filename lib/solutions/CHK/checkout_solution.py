@@ -13,11 +13,25 @@ def checkout(skus):
     itemC = Item("C",20,0,0)
     itemD = Item("D",15,0,0)
     items = {"A":itemA,"B":itemB,"C":itemC,"D":itemD}
-    for sku in skus:
 
-    # calculate checkout
+    checkoutValue = 0
+    discountItems={"A":0,"B":0}
+
+    for sku in skus:
+        if sku in items:
+            # calculate value
+            currentItem = items[sku]
+            if currentItem.offerAmount>0:
+                discountItems[sku]+=1
+            else:
+                checkoutValue += currentItem.price
+        else:
+            return -1
+    # calculate checkout from items with discount
+        
     return skus
     
+
 
 
 

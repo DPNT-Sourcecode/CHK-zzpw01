@@ -13,4 +13,3 @@ def checkout(skus):
     # calculate checkout
     return skus
     
-

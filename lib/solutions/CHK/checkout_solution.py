@@ -12,11 +12,13 @@ def checkout(skus):
     itemB = Item("B",30,2,45)
     itemC = Item("C",20,0,0)
     itemD = Item("D",15,0,0)
-    items = [itemA,itemB,itemC,itemD]
-    table = Table(items)
+    items = {"A":itemA,"B":itemB,"C":itemC,"D":itemD}
+    for sku in skus:
+
     # calculate checkout
     return skus
     
+
 
 
 

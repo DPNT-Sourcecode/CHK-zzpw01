@@ -9,8 +9,8 @@ from .table.offer import Offer
 def checkout(skus):
     # Init price table and offers
     itemAOffer = Offer("A",5,200)
-    itemAOffer = Offer("A",3,130)
-    itemAOffers = [itemAOffer]
+    itemAOffer2 = Offer("A",3,130)
+    itemAOffers = [itemAOffer,itemAOffer2]
     itemA = Item("A",50,itemAOffers)
 
     itemBOffer = Offer("B",2,45)
@@ -44,7 +44,7 @@ def checkout(skus):
         for offer in currentItem.offer:
             if nItems >= offer.offerAmount and currentItem.ID == offer.ItemID:
                 nDiscount = nItems/offer.offerAmount
-                print(int(nDiscount))
+                print(checkoutValue,nDiscount)
                 nRemovedItems = int(nDiscount)*offer.offerAmount
                 while(int(nDiscount)>0):
                     checkoutValue += offer.OfferPrice
@@ -55,6 +55,7 @@ def checkout(skus):
             else:
                 checkoutValue += nItems*currentItem.price
     return checkoutValue
+
 
 
 

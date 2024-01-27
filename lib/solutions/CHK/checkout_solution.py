@@ -61,10 +61,12 @@ def checkout(skus):
                 freeItemID = offer.ItemID
                 freeItemValue = items[freeItemID].price
                 checkoutValue -= freeItemValue
+                nItems-=2
 
         if nItems>0:
             checkoutValue += nItems*currentItem.price
     return checkoutValue
+
 
 
 

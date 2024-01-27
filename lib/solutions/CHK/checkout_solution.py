@@ -31,11 +31,11 @@ def checkout(skus):
     for discountItem in discountItems:
         currentItem = items[discountItem]
         n_items = discountItems[discountItem]
-        n_discount = n_items/currentItem.offerAmount
-        print(currentItem,n_items,n_discount)
-        checkoutValue += n_discount*currentItem.price
-        n_items-=n_discount
-        checkoutValue +=n_items*currentItem.price
+        currentItems = n_items-currentItem.offerAmount
+        while(currentItems>0):
+            checkoutValue += currentItem.OfferPrice
+        checkoutValue +=currentItems*currentItem.price
     return checkoutValue
+
 
 

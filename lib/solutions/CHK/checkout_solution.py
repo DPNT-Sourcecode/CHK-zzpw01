@@ -27,7 +27,7 @@ def checkout(skus):
                 checkoutValue += currentItem.price
         else:
             return -1
-
+    print(discountItems)
     # calculate checkout from items with discount
     for discountItem in discountItems:
         currentItem = items[discountItem]
@@ -35,13 +35,14 @@ def checkout(skus):
 
         nDiscount = nItems/currentItem.offerAmount
         nRemovedItems = nDiscount*currentItem.offerAmount
-
+        print(nRemovedItems)
         while(nDiscount>0):
             checkoutValue += currentItem.OfferPrice
             nDiscount-=1
         currentItems= nItems-nRemovedItems
         checkoutValue +=currentItems*currentItem.price
     return checkoutValue
+
 
 
 

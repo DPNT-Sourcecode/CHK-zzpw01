@@ -25,5 +25,11 @@ class TestSum():
     
     def test_chk(self):
         assert checkout_solution.checkout("AAAA") == 180
+    
+    def test_chk(self):
+        assert checkout_solution.checkout("AAAAA") == 230
+
+    def test_chk(self):
+        assert checkout_solution.checkout("BBB") == 75
 
         
